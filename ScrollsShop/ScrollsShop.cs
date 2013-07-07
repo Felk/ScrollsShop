@@ -38,6 +38,7 @@ namespace ScrollsShop
 			try
 			{
 				return new MethodDefinition[] {
+					scrollsTypes["MainMenu"].Methods.GetMethod("Start")[0],
 					scrollsTypes["TradeSystem"].Methods.GetMethod("CloseTrade")[0]
 				};
 			}
@@ -56,6 +57,10 @@ namespace ScrollsShop
 
 		public override void AfterInvoke (InvocationInfo info, ref object returnValue)
 		{
+			if (info.target is MainMenu && info.targetMethod.Equals("Start"))
+			{
+				App.ArenaChat.RoomEnter("ScrollsShop");
+			}
 			if (info.target is TradeSystem && info.targetMethod.Equals("CloseTrade"))
 			{
 				Communicator com = App.Communicator;
