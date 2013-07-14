@@ -30,7 +30,7 @@ namespace ScrollsShop
 
 		public static string GetName ()
 		{
-			return "ScS-Utilities";
+			return "ScrollsShop Utilities";
 		}
 
 		public static int GetVersion ()
