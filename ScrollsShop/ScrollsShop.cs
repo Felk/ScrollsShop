@@ -35,7 +35,7 @@ namespace ScrollsShop
 
 		public static int GetVersion ()
 		{
-			return 3;
+			return 4;
 		}
 
 		//only return MethodDefinitions you obtained through the scrollsTypes object
