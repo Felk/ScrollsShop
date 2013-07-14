@@ -35,7 +35,7 @@ namespace ScrollsShop
 
 		public static int GetVersion ()
 		{
-			return 1.2;
+			return 3;
 		}
 
 		//only return MethodDefinitions you obtained through the scrollsTypes object
@@ -183,10 +183,10 @@ namespace ScrollsShop
 				LibraryViewMessage lvm = (LibraryViewMessage)msg;
 				if (App.MyProfile.ProfileInfo.id != lvm.profileId)
 					return;
-				string TypeIdsString = cardListToString(lvm.cards);
+				string typeIdsString = cardListToString(lvm.cards);
 				WebClient client = new WebClient ();
 				//client.UploadStringAsync (new Uri ("http://localhost/scrollsshop.com/setCollection.php?name=" + App.MyProfile.ProfileInfo.name), "POST", TypeIdsString);
-				client.UploadStringAsync (new Uri ("http://scrollsshop.com/setCollection.php?name=" + App.MyProfile.ProfileInfo.name), "POST", TypeIdsString);
+				client.UploadStringAsync (new Uri ("http://scrollsshop.com/setCollection.php?name=" + App.MyProfile.ProfileInfo.name), "POST", typeIdsString);
 				client.UploadStringCompleted += (sender, e) =>
 				{
 					JsonReader reader = new JsonReader();
